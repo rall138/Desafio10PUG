@@ -1,0 +1,18 @@
+extends ./layouts/index.pug
+
+block content 
+    table(class="table table-dark")
+        thead
+            th='Nombre'
+            th='Precio'
+            th='Foto'
+        tbody
+            each producto in productos
+                tr
+                    td=producto.nombre
+                    td=producto.precio
+                    td
+                        img(src=producto.foto)
+
+    a(href="/")
+        button(class="btn btn-link")='Cargar nuevo producto'
